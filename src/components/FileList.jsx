@@ -32,8 +32,6 @@ export const FileList = ({ token }) => {
                 fields: "files(id, name)",
             });
 
-            console.log("response", response);
-
             // Set the files state with the fetched files
             setFiles(response.result.files || []);
         } catch (error) {

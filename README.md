@@ -46,3 +46,32 @@ Before running this project, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
+
+## Environment Variables
+
+This project uses environment variables to securely store sensitive information like the Google Client ID. To set up the environment variables:
+
+### 1. **Create an `.env` File**
+
+- In the root directory of the project, create a file named `.env` (or `.env.local` for environment-specific configurations).
+
+- Add the following key-value pair to store the Google Client ID:
+
+  ```env
+  VITE_GOOGLE_CLIENT_ID='your-client-id'
+  ```
+
+### 2. Access Environment Variables in Code
+
+- Use import.meta.env to access the variable in your code.
+
+Example:
+const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+### 3. Restart the Development Server
+
+- After making changes to the .env file, restart the development server to apply the changes:
+
+- npm run dev
+
+- Do not commit the .env file to version control if it contains sensitive information. Add the .env file to .gitignore.
